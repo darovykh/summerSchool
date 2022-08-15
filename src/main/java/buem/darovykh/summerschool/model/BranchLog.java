@@ -16,9 +16,11 @@ public class BranchLog {
     public BranchLog() {
     }
 
-    public BranchLog(String name, String description) {
+    public BranchLog(String name, String description, Branch whereAgentWorks, Agent agent) {
         this.name = name;
         this.description = description;
+        this.whereAgentWorks = whereAgentWorks;
+        this.agent = agent;
     }
 
     public BranchLog(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,

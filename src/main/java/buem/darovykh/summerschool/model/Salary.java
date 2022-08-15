@@ -19,9 +19,12 @@ public class Salary {
     public Salary() {
     }
 
-    public Salary(String name, String description) {
+    public Salary(String name, String description, Agent agent, Contract contract, Integer agentSalary) {
         this.name = name;
         this.description = description;
+        this.agent = agent;
+        this.contract = contract;
+        this.agentSalary = agentSalary;
     }
 
     public Salary(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,

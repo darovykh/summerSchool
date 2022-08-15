@@ -19,9 +19,15 @@ public class Agent {
     public Agent() {
     }
 
-    public Agent(String name, String description) {
+    public Agent(String name, String description, String firstName, String lastName, String patronymic,
+                 String address, String phone) {
         this.name = name;
         this.description = description;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+        this.address = address;
+        this.phone = phone;
     }
 
     public Agent(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,

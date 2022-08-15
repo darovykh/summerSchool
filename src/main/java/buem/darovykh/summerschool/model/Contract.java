@@ -20,9 +20,11 @@ public class Contract {
     public Contract() {
     }
 
-    public Contract(String name, String description) {
+    public Contract(String name, String description, Integer sumInsured, Integer tariffRate) {
         this.name = name;
         this.description = description;
+        this.sumInsured = sumInsured;
+        this.tariffRate = tariffRate;
     }
 
     public Contract(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,

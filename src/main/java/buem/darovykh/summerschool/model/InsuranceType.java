@@ -17,9 +17,11 @@ public class InsuranceType {
     public InsuranceType() {
     }
 
-    public InsuranceType(String name, String description) {
+    public InsuranceType(String name, String description, String typeName, Integer agentSalaryPercent) {
         this.name = name;
         this.description = description;
+        this.typeName = typeName;
+        this.agentSalaryPercent = agentSalaryPercent;
     }
 
     public InsuranceType(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,

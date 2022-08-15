@@ -19,9 +19,15 @@ public class Client {
     public Client() {
     }
 
-    public Client(String name, String description) {
+    public Client(String name, String description, String firstName, String lastName, String patronymic,
+                  String address, String phone) {
         this.name = name;
         this.description = description;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+        this.address = address;
+        this.phone = phone;
     }
 
     public Client(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,

@@ -17,9 +17,12 @@ public class Branch {
     public Branch() {
     }
 
-    public Branch(String name, String description) {
+    public Branch(String name, String description, String title, String address, String phone) {
         this.name = name;
         this.description = description;
+        this.title = title;
+        this.address = address;
+        this.phone = phone;
     }
 
     public Branch(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,

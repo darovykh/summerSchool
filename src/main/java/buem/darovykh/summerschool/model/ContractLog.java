@@ -19,9 +19,15 @@ public class ContractLog {
     public ContractLog() {
     }
 
-    public ContractLog(String name, String description) {
+    public ContractLog(String name, String description, Client client, Agent agent, Contract contract,
+                       Branch whereContactWasSigned, InsuranceType insuranceType) {
         this.name = name;
         this.description = description;
+        this.client = client;
+        this.agent = agent;
+        this.contract = contract;
+        this.whereContactWasSigned = whereContactWasSigned;
+        this.insuranceType = insuranceType;
     }
 
     public ContractLog(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
