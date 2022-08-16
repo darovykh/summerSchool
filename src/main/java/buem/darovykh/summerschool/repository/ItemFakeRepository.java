@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 public class ItemFakeRepository {
@@ -21,17 +22,27 @@ public class ItemFakeRepository {
     }
 
     public Item findById(String id) {
-        return null;
+        return this.items.stream().filter(item -> item.getId().equals(id))
+                .findFirst().orElse(null);
     }
 
     public Item update(Item item) {
-        return null;
+        this.deleteById(item.getId());
+        item.setUpdatedAt(LocalDateTime.now());
+        this.items.add(item);
+        return  item;
     }
 
     public void deleteById(String id) {
+        Item item = this.findById(id);
+        int index = items.indexOf(item);
+        this.items.remove(index);
     }
 
     public Item save(Item item) {
-        return null;
+        item.setId(UUID.randomUUID().toString());
+        item.setCreatedAt(LocalDateTime.now());
+        this.items.add(item);
+        return item;
     }
 }
