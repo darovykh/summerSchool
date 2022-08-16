@@ -1,4 +1,4 @@
-package buem.darovykh.summerschool.repository;
+package buem.darovykh.summerschool.repository.item;
 
 import buem.darovykh.summerschool.model.Item;
 import org.springframework.stereotype.Repository;
