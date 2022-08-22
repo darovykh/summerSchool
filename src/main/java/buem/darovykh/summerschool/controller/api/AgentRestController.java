@@ -12,7 +12,7 @@ import java.util.List;
 public class AgentRestController {
 
     @Autowired
-    IAgentService service;
+    private IAgentService service;
 
     @GetMapping("")
     public List<Agent> showAll() {

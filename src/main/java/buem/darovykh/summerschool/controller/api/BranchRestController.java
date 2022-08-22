@@ -1,6 +1,5 @@
 package buem.darovykh.summerschool.controller.api;
 
-import buem.darovykh.summerschool.model.Agent;
 import buem.darovykh.summerschool.model.Branch;
 import buem.darovykh.summerschool.service.branch.interfaces.IBranchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ import java.util.List;
 @RestController
 public class BranchRestController {
     @Autowired
-    IBranchService service;
+    private IBranchService service;
 
     @GetMapping("")
     public List<Branch> showAll() {

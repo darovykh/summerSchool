@@ -12,7 +12,7 @@ import java.util.List;
 public class ItemRestController {
 
     @Autowired
-    IItemService service;
+    private IItemService service;
 
     @GetMapping("")
     public List<Item> showAll() {

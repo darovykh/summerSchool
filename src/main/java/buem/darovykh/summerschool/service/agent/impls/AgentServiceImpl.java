@@ -12,7 +12,7 @@ import java.util.List;
 public class AgentServiceImpl implements IAgentService {
 
     @Autowired
-    AgentFakeRepository repository;
+    private AgentFakeRepository repository;
 
     @Override
     public Agent create(Agent agent) {

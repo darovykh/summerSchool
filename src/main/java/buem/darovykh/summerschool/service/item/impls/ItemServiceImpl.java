@@ -12,7 +12,7 @@ import java.util.List;
 public class ItemServiceImpl implements IItemService {
 
     @Autowired
-    ItemFakeRepository repository;
+    private ItemFakeRepository repository;
 
     @Override
     public Item create(Item item) {

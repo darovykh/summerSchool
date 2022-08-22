@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class BranchServiceImpl implements IBranchService {
     @Autowired
-    BranchFakeRepository repository;
+    private BranchFakeRepository repository;
 
     @Override
     public Branch create(Branch branch) {
