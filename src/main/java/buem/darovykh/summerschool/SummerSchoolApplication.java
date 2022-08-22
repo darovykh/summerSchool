@@ -3,7 +3,8 @@ package buem.darovykh.summerschool;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"buem.darovykh.summerschool.service", "buem.darovykh.summerschool.repository",
+        "buem.darovykh.summerschool.controller"})
 public class SummerSchoolApplication {
 
     public static void main(String[] args) {
