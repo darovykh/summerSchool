@@ -5,9 +5,9 @@ import buem.darovykh.summerschool.model.Agent;
 import java.util.List;
 
 public interface IAgentService {
-    Agent create(Agent item);
+    Agent create(Agent agent);
     Agent get(String id);
-    Agent update(Agent item);
+    Agent update(Agent agent);
     void delete(String id);
     List<Agent> getAll();
 }
