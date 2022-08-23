@@ -10,4 +10,6 @@ public interface IItemService {
     Item update(Item item);
     void delete(String id);
     List<Item> getAll();
+
+    List<Item> saveAll(List<Item> items);
 }

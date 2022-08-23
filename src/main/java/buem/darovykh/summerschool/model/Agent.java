@@ -16,11 +16,14 @@ public class Agent {
     private String address;
     private String phone;
 
+    // stores money in hundredths (if the number is longer than hundredths, then it is rounded up to hundredths)
+    private Integer fixSalary;
+
     public Agent() {
     }
 
     public Agent(String name, String description, String firstName, String lastName, String patronymic,
-                 String address, String phone) {
+                 String address, String phone, Integer fixSalary) {
         this.name = name;
         this.description = description;
         this.firstName = firstName;
@@ -28,10 +31,11 @@ public class Agent {
         this.patronymic = patronymic;
         this.address = address;
         this.phone = phone;
+        this.fixSalary = fixSalary;
     }
 
     public Agent(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
-                 String firstName, String lastName, String patronymic, String address, String phone) {
+                 String firstName, String lastName, String patronymic, String address, String phone, Integer fixSalary) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -42,7 +46,7 @@ public class Agent {
         this.patronymic = patronymic;
         this.address = address;
         this.phone = phone;
-
+        this.fixSalary = fixSalary;
     }
 
     public String getId() {
@@ -125,6 +129,14 @@ public class Agent {
         this.phone = phone;
     }
 
+    public Integer getFixSalary() {
+        return fixSalary;
+    }
+
+    public void setFixSalary(Integer fixSalary) {
+        this.fixSalary = fixSalary;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -151,6 +163,7 @@ public class Agent {
                 ", patronymic='" + patronymic + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
+                ", fixSalary=" + fixSalary +
                 '}';
     }
 }

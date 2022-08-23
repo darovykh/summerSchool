@@ -1,7 +1,6 @@
 package buem.darovykh.summerschool.service.item.impls;
 
 import buem.darovykh.summerschool.model.Item;
-import buem.darovykh.summerschool.repository.item.ItemFakeRepository;
 import buem.darovykh.summerschool.repository.item.ItemMongoRepository;
 import buem.darovykh.summerschool.service.item.interfaces.IItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +28,16 @@ public class ItemServiceImpl implements IItemService {
     @Autowired
     ItemMongoRepository repository;
 
-/*    @PostConstruct
+    /*@PostConstruct
     void init(){
         repository.saveAll(items);
     }*/
 
     @Override
     public Item create(Item item) {
-        item.setCreatedAt(LocalDateTime.now());
+        LocalDateTime now = LocalDateTime.now();
+        item.setCreatedAt(now);
+        item.setUpdatedAt(now);
         return repository.save(item);
     }
 
@@ -59,5 +60,10 @@ public class ItemServiceImpl implements IItemService {
     @Override
     public List<Item> getAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<Item> saveAll(List<Item> items) {
+        return repository.saveAll(items);
     }
 }
