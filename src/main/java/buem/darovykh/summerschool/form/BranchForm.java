@@ -1,50 +1,37 @@
-package buem.darovykh.summerschool.model;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package buem.darovykh.summerschool.form;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class Client {
-    @Id
+public class BranchForm {
     private String id;
     private String name;
     private String description;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    private String firstName;
-    private String lastName;
-    private String patronymic;
+    private String title;
     private String address;
     private String phone;
 
-    public Client() {
+    public BranchForm() {
     }
 
-    public Client(String name, String description, String firstName, String lastName, String patronymic,
-                  String address, String phone) {
+    public BranchForm(String name, String description, String title, String address, String phone) {
         this.name = name;
         this.description = description;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
+        this.title = title;
         this.address = address;
         this.phone = phone;
     }
 
-    public Client(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
-                  String firstName, String lastName, String patronymic, String address, String phone) {
+    public BranchForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
+                      String title, String address, String phone) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
+        this.title = title;
         this.address = address;
         this.phone = phone;
     }
@@ -89,28 +76,12 @@ public class Client {
         this.updatedAt = updatedAt;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPatronymic() {
-        return patronymic;
-    }
-
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAddress() {
@@ -130,29 +101,14 @@ public class Client {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
-        return id.equals(client.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
     public String toString() {
-        return "Client{" +
+        return "BranchForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", patronymic='" + patronymic + '\'' +
+                ", title='" + title + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';

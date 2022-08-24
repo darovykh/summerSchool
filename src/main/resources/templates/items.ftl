@@ -20,7 +20,7 @@
                 <a href="http://localhost:8080/ui/v1/agents/" class="item">Get Agents</a>
             </div>
             <div class="menu-item">
-                <a href="#" class="item">Get Branches</a>
+                <a href="http://localhost:8080/ui/v1/branches/" class="item">Get Branches</a>
             </div>
             <div class="menu-item">
                 <a href="#" class="item">Get Clients</a>
