@@ -60,7 +60,7 @@
                     <td>${insuranceType.createdAt}</td>
                     <td>${insuranceType.updatedAt}</td>
                     <td>${insuranceType.typeName}</td>
-                    <td>${insuranceType.agentSalaryPersent}</td>
+                    <td>${insuranceType.agentSalaryPercent/100}</td>
                     <td><a href="/ui/v1/insuranceTypes/edit/${insuranceType.id}"><button class="btn btn-warning">Edit</button></a></td>
                     <td><a href="/ui/v1/insuranceTypes/del/${insuranceType.id}"><button class="btn btn-danger">Delete</button></a></td>
                 </tr>
