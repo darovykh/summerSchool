@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Items</title>
-    <#include "itemsStyle.css">
+    <#include "style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 <body>
@@ -17,7 +17,7 @@
                 <a href="http://localhost:8080/ui/v1/items/" class="item">Get Items</a>
             </div>
             <div class="menu-item">
-                <a href="#" class="item">Get Agents</a>
+                <a href="http://localhost:8080/ui/v1/agents/" class="item">Get Agents</a>
             </div>
             <div class="menu-item">
                 <a href="#" class="item">Get Branches</a>

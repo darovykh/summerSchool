@@ -92,4 +92,10 @@ input:hover{
     margin-top: 15px;
     text-align: center;
 }
+.second-column{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 14px;
+    top: 10%;
+}
 </style>

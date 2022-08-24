@@ -20,7 +20,7 @@ public class Agent {
     private String patronymic;
     private String address;
     private String phone;
-
+    // for day
     // stores money in hundredths (if the number is longer than hundredths, then it is rounded up to hundredths)
     private Integer fixSalary;
 
