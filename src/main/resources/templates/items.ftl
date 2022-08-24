@@ -29,7 +29,7 @@
                 <a href="http://localhost:8080/ui/v1/contracts/" class="item">Get Contracts</a>
             </div>
             <div class="menu-item">
-                <a href="#" class="item">Get Insurance Types</a>
+                <a href="http://localhost:8080/ui/v1/insuranceTypes/" class="item">Get Insurance Types</a>
             </div>
             <div class="menu-item">
                 <a href="#" class="item">Get Salary</a>

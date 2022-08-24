@@ -1,14 +1,8 @@
-package buem.darovykh.summerschool.model;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package buem.darovykh.summerschool.form;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class InsuranceType {
-    @Id
+public class InsuranceTypeForm {
     private String id;
     private String name;
     private String description;
@@ -19,18 +13,18 @@ public class InsuranceType {
     // stores percentage in hundredths (if the number is longer than hundredths, then it is rounded up to hundredths)
     private Integer agentSalaryPercent;
 
-    public InsuranceType() {
+    public InsuranceTypeForm() {
     }
 
-    public InsuranceType(String name, String description, String typeName, Integer agentSalaryPercent) {
+    public InsuranceTypeForm(String name, String description, String typeName, Integer agentSalaryPercent) {
         this.name = name;
         this.description = description;
         this.typeName = typeName;
         this.agentSalaryPercent = agentSalaryPercent;
     }
 
-    public InsuranceType(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
-                         String typeName, Integer agentSalaryPercent) {
+    public InsuranceTypeForm(String id, String name, String description, LocalDateTime createdAt,
+                             LocalDateTime updatedAt, String typeName, Integer agentSalaryPercent) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -97,21 +91,8 @@ public class InsuranceType {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        InsuranceType that = (InsuranceType) o;
-        return id.equals(that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
     public String toString() {
-        return "InsuranceType{" +
+        return "InsuranceTypeForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
