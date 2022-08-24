@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Branches</title>
+    <title>Clients</title>
     <#include "style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 <body>
 <header class="title">
-    <h1>All branches</h1>
+    <h1>All clients</h1>
 </header>
 
 <div class="main">
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="create-button">
-        <a href="/ui/v1/branches/add" class="item"><button type="button" class="btn btn-success">Create</button></a>
+        <a href="/ui/v1/clients/add" class="item"><button type="button" class="btn btn-success">Create</button></a>
     </div>
     <div class="content table-wrapper-scroll-y my-custom-scrollbar">
         <table class="table table-success table-striped">
@@ -46,25 +46,29 @@
             <th>Description</th>
             <th>Created At</th>
             <th>Updated At</th>
-            <th>Title</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Patronymic</th>
             <th>Address</th>
             <th>Phone</th>
             <th>EDIT</th>
             <th>DELETE</th>
             </thead>
             <tbody>
-            <#list branches as branch>
+            <#list clients as client>
                 <tr>
-                    <td>${branch.id}</td>
-                    <td>${branch.name}</td>
-                    <td>${branch.description}</td>
-                    <td>${branch.createdAt}</td>
-                    <td>${branch.updatedAt}</td>
-                    <td>${branch.title}</td>
-                    <td>${branch.address}</td>
-                    <td>${branch.phone}</td>
-                    <td><a href="/ui/v1/branches/edit/${branch.id}"><button class="btn btn-warning">Edit</button></a></td>
-                    <td><a href="/ui/v1/branches/del/${branch.id}"><button class="btn btn-danger">Delete</button></a></td>
+                    <td>${client.id}</td>
+                    <td>${client.name}</td>
+                    <td>${client.description}</td>
+                    <td>${client.createdAt}</td>
+                    <td>${client.updatedAt}</td>
+                    <td>${client.firstName}</td>
+                    <td>${client.lastName}</td>
+                    <td>${client.patronymic}</td>
+                    <td>${client.address}</td>
+                    <td>${client.phone}</td>
+                    <td><a href="/ui/v1/clients/edit/${client.id}"><button class="btn btn-warning">Edit</button></a></td>
+                    <td><a href="/ui/v1/clients/del/${client.id}"><button class="btn btn-danger">Delete</button></a></td>
                 </tr>
             </#list>
             </tbody>

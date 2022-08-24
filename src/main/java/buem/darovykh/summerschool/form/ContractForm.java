@@ -1,14 +1,9 @@
-package buem.darovykh.summerschool.model;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package buem.darovykh.summerschool.form;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class Contract {
-    @Id
+public class ContractForm {
+
     private String id;
     private String name;
     private String description;
@@ -22,18 +17,18 @@ public class Contract {
     // stores percentage in hundredths (if the number is longer than hundredths, then it is rounded up to hundredths)
     private Integer tariffRate;
 
-    public Contract() {
+    public ContractForm() {
     }
 
-    public Contract(String name, String description, Integer sumInsured, Integer tariffRate) {
+    public ContractForm(String name, String description, Integer sumInsured, Integer tariffRate) {
         this.name = name;
         this.description = description;
         this.sumInsured = sumInsured;
         this.tariffRate = tariffRate;
     }
 
-    public Contract(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
-                    Integer sumInsured, Integer tariffRate) {
+    public ContractForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
+                        Integer sumInsured, Integer tariffRate) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -100,21 +95,8 @@ public class Contract {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Contract contract = (Contract) o;
-        return id.equals(contract.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
     public String toString() {
-        return "Contract{" +
+        return "ContractForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

@@ -23,10 +23,10 @@
             <a href="http://localhost:8080/ui/v1/branches/" class="item">Get Branches</a>
         </div>
         <div class="menu-item">
-            <a href="#" class="item">Get Clients</a>
+            <a href="http://localhost:8080/ui/v1/clients/" class="item">Get Clients</a>
         </div>
         <div class="menu-item">
-            <a href="#" class="item">Get Contracts</a>
+            <a href="http://localhost:8080/ui/v1/contracts/" class="item">Get Contracts</a>
         </div>
         <div class="menu-item">
             <a href="#" class="item">Get Insurance Types</a>
