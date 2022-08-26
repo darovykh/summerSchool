@@ -25,10 +25,10 @@ public class InsuranceTypeServiceImpl implements IInsuranceTypeService {
     @Autowired
     InsuranceTypeMongoRepository repository;
 
-    /*@PostConstruct
+    @PostConstruct
     void init(){
         repository.saveAll(insuranceTypes);
-    }*/
+    }
 
     @Override
     public InsuranceType create(InsuranceType insuranceType) {

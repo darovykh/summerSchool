@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 
 @RequestMapping("/ui/v1/items/")
 @Controller
+@CrossOrigin
 public class ItemUIController {
     @Autowired
     IItemService service;

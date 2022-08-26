@@ -1,14 +1,11 @@
-package buem.darovykh.summerschool.model;
+package buem.darovykh.summerschool.form;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import buem.darovykh.summerschool.model.Agent;
+import buem.darovykh.summerschool.model.Branch;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class BranchLog {
-    @Id
+public class BranchLogForm {
     private String id;
     private String name;
     private String description;
@@ -18,18 +15,18 @@ public class BranchLog {
     private Branch whereAgentWorks;
     private Agent agent;
 
-    public BranchLog() {
+    public BranchLogForm() {
     }
 
-    public BranchLog(String name, String description, Branch whereAgentWorks, Agent agent) {
+    public BranchLogForm(String name, String description, Branch whereAgentWorks, Agent agent) {
         this.name = name;
         this.description = description;
         this.whereAgentWorks = whereAgentWorks;
         this.agent = agent;
     }
 
-    public BranchLog(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
-                     Branch whereAgentWorks, Agent agent) {
+    public BranchLogForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
+                         Branch whereAgentWorks, Agent agent) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -96,21 +93,8 @@ public class BranchLog {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        BranchLog branchLog = (BranchLog) o;
-        return id.equals(branchLog.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
     public String toString() {
-        return "BranchLog{" +
+        return "BranchLogForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

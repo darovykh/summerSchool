@@ -4,6 +4,7 @@ import buem.darovykh.summerschool.form.BranchForm;
 import buem.darovykh.summerschool.form.ItemForm;
 import buem.darovykh.summerschool.model.Branch;
 import buem.darovykh.summerschool.model.Item;
+import buem.darovykh.summerschool.service.agent.interfaces.IAgentService;
 import buem.darovykh.summerschool.service.branch.interfaces.IBranchService;
 import buem.darovykh.summerschool.service.item.interfaces.IItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.stream.Collectors;
 
 @RequestMapping("/ui/v1/branches/")
 @Controller
+@CrossOrigin
 public class BranchUIController {
 
     @Autowired

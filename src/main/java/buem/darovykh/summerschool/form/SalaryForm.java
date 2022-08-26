@@ -1,21 +1,15 @@
-package buem.darovykh.summerschool.model;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package buem.darovykh.summerschool.form;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class Salary {
-    @Id
+public class SalaryForm {
     private String id;
     private String name;
     private String description;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    private Agent agent;
+    private String agentId;
     // is percent from all contracts contractBonus + Agent.fixSalary
     // stores money in hundredths (if the number is longer than hundredths, then it is rounded up to hundredths)
     private Integer salary;
@@ -26,29 +20,29 @@ public class Salary {
     private LocalDateTime from;
     private LocalDateTime to;
 
-    public Salary() {
+    public SalaryForm() {
     }
 
-    public Salary(String name, String description, Agent agent, Integer salary,
-                  Integer contractBonus, LocalDateTime from, LocalDateTime to) {
+    public SalaryForm(String name, String description, String agentId, Integer salary,
+                      Integer contractBonus, LocalDateTime from, LocalDateTime to) {
         this.name = name;
         this.description = description;
-        this.agent = agent;
+        this.agentId = agentId;
         this.salary = salary;
         this.contractBonus = contractBonus;
         this.from = from;
         this.to = to;
     }
 
-    public Salary(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
-                  Agent agent, Integer salary, Integer contractBonus, LocalDateTime from,
-                  LocalDateTime to) {
+    public SalaryForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
+                      String agentId, Integer salary, Integer contractBonus, LocalDateTime from,
+                      LocalDateTime to) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.agent = agent;
+        this.agentId = agentId;
         this.salary = salary;
         this.contractBonus = contractBonus;
         this.from = from;
@@ -95,12 +89,12 @@ public class Salary {
         this.updatedAt = updatedAt;
     }
 
-    public Agent getAgent() {
-        return agent;
+    public String getAgentId() {
+        return agentId;
     }
 
-    public void setAgent(Agent agent) {
-        this.agent = agent;
+    public void setAgentId(String agentId) {
+        this.agentId = agentId;
     }
 
     public Integer getSalary() {
@@ -136,27 +130,14 @@ public class Salary {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Salary salary = (Salary) o;
-        return id.equals(salary.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
     public String toString() {
-        return "Salary{" +
+        return "SalaryForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", agent=" + agent +
+                ", agentId='" + agentId + '\'' +
                 ", salary=" + salary +
                 ", contractBonus=" + contractBonus +
                 ", from=" + from +

@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 
 @RequestMapping("/ui/v1/insuranceTypes/")
 @Controller
+@CrossOrigin
 public class InsuranceTypeUIController {
 
     @Autowired
@@ -42,7 +43,7 @@ public class InsuranceTypeUIController {
         insuranceType.setName(form.getName());
         insuranceType.setDescription(form.getDescription());
         insuranceType.setTypeName(form.getTypeName());
-        insuranceType.setAgentSalaryPercent(form.getAgentSalaryPercent());
+        insuranceType.setAgentSalaryPercent(form.getAgentSalaryPercent()*100);
         service.create(insuranceType);
         return "redirect:/ui/v1/insuranceTypes/";
     }

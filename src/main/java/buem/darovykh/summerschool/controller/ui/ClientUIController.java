@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 
 @RequestMapping("/ui/v1/clients/")
 @Controller
+@CrossOrigin
 public class ClientUIController {
 
     @Autowired

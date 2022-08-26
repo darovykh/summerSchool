@@ -2,7 +2,9 @@ package buem.darovykh.summerschool.controller.ui;
 
 import buem.darovykh.summerschool.form.AgentForm;
 import buem.darovykh.summerschool.model.Agent;
+import buem.darovykh.summerschool.model.BranchLog;
 import buem.darovykh.summerschool.service.agent.interfaces.IAgentService;
+import buem.darovykh.summerschool.service.branchLog.interfaces.IBranchLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +14,13 @@ import java.time.LocalDateTime;
 
 @RequestMapping("/ui/v1/agents/")
 @Controller
+@CrossOrigin
 public class AgentUIController {
     @Autowired
     IAgentService service;
+
+    @Autowired
+    IBranchLogService branchLogService;
 
     @GetMapping("")
     public String showAll(Model model) {
@@ -83,7 +89,6 @@ public class AgentUIController {
         agentToUpdate.setAddress(form.getAddress());
         agentToUpdate.setPhone(form.getPhone());
         agentToUpdate.setFixSalary(form.getFixSalary());
-
         service.update(agentToUpdate);
         return "redirect:/ui/v1/agents/";
     }

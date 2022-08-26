@@ -1,14 +1,10 @@
-package buem.darovykh.summerschool.model;
+package buem.darovykh.summerschool.form;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import buem.darovykh.summerschool.model.*;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Document
-public class ContractLog {
-    @Id
+public class ContractLogForm {
     private String id;
     private String name;
     private String description;
@@ -21,11 +17,11 @@ public class ContractLog {
     private Branch whereContactWasSigned;
     private InsuranceType insuranceType;
 
-    public ContractLog() {
+    public ContractLogForm() {
     }
 
-    public ContractLog(String name, String description, Client client, Agent agent, Contract contract,
-                       Branch whereContactWasSigned, InsuranceType insuranceType) {
+    public ContractLogForm(String name, String description, Client client, Agent agent, Contract contract,
+                           Branch whereContactWasSigned, InsuranceType insuranceType) {
         this.name = name;
         this.description = description;
         this.client = client;
@@ -35,9 +31,9 @@ public class ContractLog {
         this.insuranceType = insuranceType;
     }
 
-    public ContractLog(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
-                       Client client, Agent agent, Contract contract, Branch whereContactWasSigned,
-                       InsuranceType insuranceType) {
+    public ContractLogForm(String id, String name, String description, LocalDateTime createdAt, LocalDateTime updatedAt,
+                           Client client, Agent agent, Contract contract, Branch whereContactWasSigned,
+                           InsuranceType insuranceType) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -131,21 +127,8 @@ public class ContractLog {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ContractLog that = (ContractLog) o;
-        return id.equals(that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
     public String toString() {
-        return "ContractLog{" +
+        return "ContractLogForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

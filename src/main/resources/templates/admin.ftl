@@ -32,7 +32,13 @@
       <a href="http://localhost:8080/ui/v1/insuranceTypes/" class="item">Get Insurance Types</a>
     </div>
     <div class="menu-item">
-      <a href="#" class="item">Get Salary</a>
+      <a href="http://localhost:8080/ui/v1/salarys/" class="item">Get Salary</a>
+    </div>
+    <div class="menu-item">
+      <a href="http://localhost:8080/ui/v1/branchLogs/" class="item">Get branch logs</a>
+    </div>
+    <div class="menu-item">
+      <a href="http://localhost:8080/ui/v1/contractLogs/" class="item">Get contract logs</a>
     </div>
   </div>
 </div>
